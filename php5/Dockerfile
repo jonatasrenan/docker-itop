@@ -38,13 +38,14 @@ RUN apt-get install -y \
 
 # cli
 
-RUN apt-get install -y \
-        wget unzip
-
 # zip 
 RUN apt-get install -y \
         zlib1g-dev && \
     docker-php-ext-install zip 
+
+# Other packages
+RUN apt-get install -y \
+        wget unzip
 
 RUN rm -rf /var/lib/apt/lists/*
 
