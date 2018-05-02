@@ -70,7 +70,7 @@ RUN ls extensions/
 RUN unzip /tmp/teemip-discovery.zip -d extensions/
 
 # Download Extension itop-team-description
-RUN wget -O /tmp/itop-team-description.zip --trust-server-names https://github.com/jonatasrenan/itop-team-description/archive/master.zip
+RUN wget -O /tmp/itop-team-description.zip --trust-server-names https://github.com/jonatasrenan/itop-team-description/archive/9d23702e0553cd8559f325a4d5655e1e321abaf0.zip
 RUN unzip /tmp/itop-team-description.zip -d extensions/
 RUN mv extensions/itop-team-description-master extensions/itop-team-description
 
