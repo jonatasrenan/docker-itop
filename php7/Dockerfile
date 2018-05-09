@@ -13,9 +13,11 @@ RUN apt-get install -y \
     docker-php-ext-install ldap
 
 # mcrypt
-#RUN apt-get install -y \
-#        libmcrypt-dev && \
-#    docker-php-ext-install -j$(nproc) mcrypt
+RUN apt-get install -y \
+        libmcrypt-dev && \
+	pecl install mcrypt-1.0.1 && \
+    #docker-php-ext-install -j$(nproc) mcrypt
+    docker-php-ext-enable mcrypt
 
 # soap
 RUN apt-get install -y \
