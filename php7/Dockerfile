@@ -1,5 +1,5 @@
 # The current PHP Version (7.2.5) is not yet validated by Combodo. You may experience some incompatibility issues.
-FROM php:7-apache
+FROM php:7.1-apache
 
 RUN apt-get update
 
@@ -15,8 +15,8 @@ RUN apt-get install -y \
 # mcrypt
 RUN apt-get install -y \
         libmcrypt-dev && \
-	pecl install mcrypt-1.0.1 && \
-    #docker-php-ext-install -j$(nproc) mcrypt
+    #pecl install mcrypt-1.0.1 && \
+    docker-php-ext-install -j$(nproc) mcrypt && \
     docker-php-ext-enable mcrypt
 
 # soap
